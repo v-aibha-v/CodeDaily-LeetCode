@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-class Solution {
+class Solution
+{
 public:
     // basic
     //  time -> n log n
@@ -40,10 +41,12 @@ public:
     //  }
     //    //dp
     vector<int> vec;
-    int valid(int n) {
+    int valid(int n)
+    {
         int ans = 0;
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++)
+        {
             vec[0] = 0;
             int digit = i % 10;
             int temp;
@@ -56,15 +59,18 @@ public:
             int a = vec[i / 10];
             if (a == -1 or temp == -1)
                 vec[i] = -1;
-            else if (a == 1 or temp == 1) {
+            else if (a == 1 or temp == 1)
+            {
                 vec[i] = 1;
                 ans++;
-            } else
+            }
+            else
                 vec[i] = 0;
         }
         return ans;
     }
-    int rotatedDigits(int n) {
+    int rotatedDigits(int n)
+    {
         // int ans = 0;
         vec.resize(n + 1, 0);
         // for (int i = 1; i <= n; i++) {
@@ -77,4 +83,3 @@ public:
     }
 };
 // @lc code=end
-
